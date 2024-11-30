@@ -3,6 +3,7 @@ import Home from "../components/Home";
 import About from "../components/About";
 
 
+
 export default function MainPage() {
   const [activePage, setActivePage] = useState("home");
   const [isAnimating, setIsAnimating] = useState(false);
