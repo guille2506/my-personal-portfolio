@@ -18,3 +18,15 @@
     top: 0; 
   }
   
+  #homeVideo {
+    pointer-events: none; /* Evita interferir con clics */
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .z-10 {
+    z-index: 10;
+  }
+  

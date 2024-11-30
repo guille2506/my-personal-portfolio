@@ -5,18 +5,17 @@ const HomeVideo = () => {
     if (typeof window !== "undefined" && window.$) {
       $("#homeVideo").YTPlayer({
         videoURL: "https://www.youtube.com/watch?v=KR97TgpMyrc",
-        containment: "#home",
+        containment: "#main", 
         autoPlay: true,
         mute: true,
         showControls: false,
         startAt: 0,
         opacity: 1,
-        disablePause: false,
       });
     }
   }, []);
 
-  return <div id="homeVideo" className="absolute top-0 left-0 w-full h-full"></div>;
+  return <div id="homeVideo" className="absolute top-0 left-0 w-full h-full z-0"></div>;
 };
 
 export default HomeVideo;
