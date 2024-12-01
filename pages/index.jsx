@@ -1,51 +1,77 @@
 import { useState } from "react";
 import Home from "../components/Home";
 import About from "../components/About";
+import Resume from "../components/Resume";
+import Portfolio from "../components/Portfolio";
+import Contact from "../components/Contact";
 import HomeVideo from "../components/HomeVideo";
+import SocialLinks from "../components/SocialLinks";
+import LanguageSwitch from "../components/LanguageSwitch";
 
 export default function MainPage() {
   const [activePage, setActivePage] = useState("home");
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleNavigation = (page) => {
-    setIsAnimating(true); 
+    setIsAnimating(true);
     setTimeout(() => {
-      setActivePage(page); 
-      setIsAnimating(false); 
-    }, 1000); 
+      setActivePage(page);
+      setIsAnimating(false);
+    }, 1000);
   };
 
   return (
     <div id="main" className="relative h-screen w-full">
+      {/* Efecto Curtain */}
+      <div className={`curtain ${isAnimating ? "active" : ""}`}></div>
+
       {/* Video de fondo */}
       <HomeVideo />
 
-      {/* Efecto de cortina */}
-      <div
-        className={`fixed inset-0 bg-black z-50 transition-transform duration-1000 ${
-          isAnimating ? "translate-y-0" : "-translate-y-full"
-        }`}
-      ></div>
+      {/* Redes sociales y cambio de idioma */}
+      <SocialLinks />
+      <LanguageSwitch />
 
       {/* Contenido dinámico */}
       <div className="relative z-10">
         {activePage === "home" && <Home />}
         {activePage === "about" && <About />}
+        {activePage === "resume" && <Resume />}
+        {activePage === "portfolio" && <Portfolio />}
+        {activePage === "contact" && <Contact />}
       </div>
 
       {/* Botones de navegación */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 space-x-4 z-20">
+      <div className="fixed top-4 right-4 flex flex-row space-x-6 z-20">
         <button
           onClick={() => handleNavigation("home")}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          className="text-white hover:text-gray-300 transition-colors duration-200"
         >
           Home
         </button>
         <button
           onClick={() => handleNavigation("about")}
-          className="px-4 py-2 bg-green-500 text-white rounded"
+          className="text-white hover:text-gray-300 transition-colors duration-200"
         >
           About
+        </button>
+        <button
+          onClick={() => handleNavigation("resume")}
+          className="text-white hover:text-gray-300 transition-colors duration-200"
+        >
+          Resume
+        </button>
+        <button
+          onClick={() => handleNavigation("portfolio")}
+          className="text-white hover:text-gray-300 transition-colors duration-200"
+        >
+          Portfolio
+        </button>
+        <button
+          onClick={() => handleNavigation("contact")}
+          className="text-white hover:text-gray-300 transition-colors duration-200"
+        >
+          Contact
         </button>
       </div>
     </div>

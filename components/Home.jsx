@@ -2,6 +2,7 @@ import Script from "next/script";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
+
 // Cargar jQuery dinámicamente (solo en cliente)
 const HomeVideo = dynamic(
   () => import("./HomeVideo"), // Componente que incluye la lógica de YTPlayer
