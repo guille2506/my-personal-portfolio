@@ -11,6 +11,7 @@ const HomeVideo = () => {
         showControls: false,
         startAt: 0,
         opacity: 1,
+        stopMovieOnBlur: false, 
       });
     }
   }, []);
