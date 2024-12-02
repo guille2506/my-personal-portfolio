@@ -1,3 +1,6 @@
+import { data } from "jquery";
+
+//efecto cortina
 export const handlePageNavigation = (setActivePage, setIsAnimating, page) => {
     if (typeof setIsAnimating !== "function" || typeof setActivePage !== "function") {
       console.error("setIsAnimating y setActivePage deben ser funciones.");
@@ -10,4 +13,6 @@ export const handlePageNavigation = (setActivePage, setIsAnimating, page) => {
       setIsAnimating(false);
     }, 1000);
   };
+  
+
   

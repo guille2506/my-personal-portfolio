@@ -12,6 +12,7 @@ const HomeVideo = () => {
         startAt: 0,
         opacity: 1,
         stopMovieOnBlur: false, 
+        quality: "hd720", 
       });
     }
   }, []);

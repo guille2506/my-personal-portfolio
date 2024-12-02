@@ -1,15 +1,12 @@
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-
-// Cargar jQuery dinámicamente (solo en cliente)
-const HomeVideo = dynamic(
-  () => import("./HomeVideo"), // Componente que incluye la lógica de YTPlayer
-  { ssr: false } // Deshabilita SSR para este componente
-);
+const HomeVideo = dynamic(() => import("./HomeVideo"), { ssr: false });
 
 const Home = () => {
+  const { t } = useTranslation(); 
+
   return (
     <div id="home" className="relative h-screen w-full">
       {/* Scripts dinámicos */}
@@ -21,8 +18,8 @@ const Home = () => {
 
       {/* Contenido encima del video */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <h1 className="text-4xl font-bold">Bienvenido a mi Portafolio</h1>
-        <p className="mt-4 text-lg">Explora mi trabajo y experiencia.</p>
+        <h1 className="text-4xl font-bold">{t("title") || "Cargando..."}</h1> {/* Título dinámico */}
+        <p className="mt-4 text-lg">{t("subtitle") || "Cargando..."}</p> {/* Subtítulo dinámico */}
       </div>
 
       {/* Filtro oscuro (opcional) */}

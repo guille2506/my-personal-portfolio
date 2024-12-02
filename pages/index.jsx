@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { handlePageNavigation } from "../scripts/main"; // Importa la función correcta
+import { handlePageNavigation } from "../scripts/main"; 
 import Home from "../components/Home";
 import About from "../components/About";
 import Resume from "../components/Resume";
@@ -9,12 +9,15 @@ import HomeVideo from "../components/HomeVideo";
 import SocialLinks from "../components/SocialLinks";
 import LanguageSwitch from "../components/LanguageSwitch";
 
+
+
 export default function MainPage() {
   const [activePage, setActivePage] = useState("home");
   const [isAnimating, setIsAnimating] = useState(false);
 
   return (
 <div id="main" className="relative h-screen w-full">
+  
   {/* Efecto Curtain */}
   <div className={`curtain ${isAnimating ? "active" : ""}`}></div>
 
