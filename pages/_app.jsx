@@ -1,5 +1,4 @@
 import "../styles/globals.css"; 
-import "../styles/jquery.mb.YTPlayer.min.css";
 import "../i18n/i18n"; 
 import LanguageSwitch from "../components/LanguageSwitch"; 
 

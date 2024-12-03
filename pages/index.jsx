@@ -8,6 +8,8 @@ import Contact from "../components/Contact";
 import HomeVideo from "../components/HomeVideo";
 import SocialLinks from "../components/SocialLinks";
 import LanguageSwitch from "../components/LanguageSwitch";
+import HamburgerMenu from "../components/HamburgerMenu.jsx"; // Asegúrate de ajustar la ruta según tu estructura
+
 
 export default function MainPage() {
   const [activePage, setActivePage] = useState("home");
@@ -36,6 +38,28 @@ export default function MainPage() {
   </>
 )}    {/* DUADAS.... */}
 
+
+   {/* Menú Hamburguesa */}
+   <div className="fixed top-4 right-4 z-50 md:hidden">
+        <HamburgerMenu
+          onNavigate={(page) => {
+            handlePageNavigation(setActivePage, setIsAnimating, page);
+          }}
+        />
+      </div>
+
+      {/* Botones de navegación para pantallas grandes */}
+      <div className="fixed top-4 right-4 hidden md:flex flex-row space-x-6 z-20">
+        {["home", "about", "resume", "portfolio", "contact"].map((page) => (
+          <button
+            key={page}
+            onClick={() => handlePageNavigation(setActivePage, setIsAnimating, page)}
+            className="text-white hover:text-gray-300 transition-colors duration-200"
+          >
+            {page.charAt(0).toUpperCase() + page.slice(1)}
+          </button>
+        ))}
+      </div>
 
       {/* Contenido dinámico */}
       <div className="relative z-10">

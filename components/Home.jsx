@@ -10,8 +10,6 @@ const Home = () => {
   return (
     <div id="home" className="relative h-screen w-full">
       {/* Scripts dinámicos */}
-      <Script src="https://code.jquery.com/jquery-3.6.0.min.js" strategy="beforeInteractive" />
-      <Script src="/lib/jquery.mb.YTPlayer.min.js" strategy="beforeInteractive" />
 
       {/* Video de fondo */}
       <HomeVideo />
