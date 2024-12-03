@@ -8,9 +8,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'], // Define Poppins como la fuente principal
       },
     },
   },

@@ -1,26 +1,38 @@
 import i18n from "i18next";
 
-const LanguageSwitch = () => {
+const LanguageSwitch = ({ activePage }) => {
   const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang); 
+    i18n.changeLanguage(lang);
   };
 
   return (
-    <div className="fixed bottom-4 left-4 flex flex-col items-start space-y-2 z-50">
+    <div
+      className={`fixed bottom-4 left-4 flex flex-col items-start space-y-5 z-50 ${
+        activePage !== "home" ? "hidden" : ""
+      }`}
+    >
       {/* Botón para cambiar a Español */}
       <button
         onClick={() => changeLanguage("es")}
-        className="text-white text-sm hover:text-gray-300 transition-transform duration-200"
+        className="text-white text-sm hover:text-gray-300 transition-transform duration-200 ml-4"
+        style={{
+          writingMode: "vertical-rl", 
+          letterSpacing: "2px", 
+        }}
       >
-        E<br />S<br />P
+        ESP
       </button>
 
       {/* Botón para cambiar a Inglés */}
       <button
         onClick={() => changeLanguage("en")}
-        className="text-white text-sm hover:text-gray-300 transition-transform duration-200"
+        className="text-white text-sm hover:text-gray-300 transition-transform duration-200 ml-4"
+        style={{
+          writingMode: "vertical-rl",
+          letterSpacing: "2px", 
+        }}
       >
-        E<br />N<br />G
+        ENG
       </button>
     </div>
   );
