@@ -7,17 +7,17 @@ const LanguageSwitch = ({ activePage }) => {
 
   return (
     <div
-      className={`fixed bottom-4 left-4 flex flex-col items-start space-y-5 z-50 ${
+      className={`fixed bottom-8 left-8 flex flex-col items-start space-y-5 z-50 ${
         activePage !== "home" ? "hidden" : ""
       }`}
     >
       {/* Botón para cambiar a Español */}
       <button
         onClick={() => changeLanguage("es")}
-        className="text-white text-sm hover:text-gray-300 transition-transform duration-200 ml-4"
+        className="text-white text-sm hover:text-gray-300 transition-transform duration-200 ml-1"
         style={{
-          writingMode: "vertical-rl", 
-          letterSpacing: "2px", 
+          writingMode: "vertical-rl",
+          letterSpacing: "2px",
         }}
       >
         ESP
@@ -26,10 +26,10 @@ const LanguageSwitch = ({ activePage }) => {
       {/* Botón para cambiar a Inglés */}
       <button
         onClick={() => changeLanguage("en")}
-        className="text-white text-sm hover:text-gray-300 transition-transform duration-200 ml-4"
+        className="text-white text-sm hover:text-gray-300 transition-transform duration-200 ml-1"
         style={{
           writingMode: "vertical-rl",
-          letterSpacing: "2px", 
+          letterSpacing: "2px",
         }}
       >
         ENG

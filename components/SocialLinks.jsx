@@ -9,7 +9,7 @@ const SocialLinks = () => (
     <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-0"></div>
     
     {/* Íconos sociales */}
-    <div className="social-links fixed bottom-4 right-4 flex flex-col space-y-4 z-50">
+    <div className="social-links fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
       <a
         href="https://github.com"
         target="_blank"
