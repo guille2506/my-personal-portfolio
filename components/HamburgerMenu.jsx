@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const HamburgerMenu = ({ onNavigate }) => {
+const HamburgerMenu = ({ pages, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -10,7 +10,7 @@ const HamburgerMenu = ({ onNavigate }) => {
       {/* Botón del menú hamburguesa */}
       <button
         onClick={toggleMenu}
-        className="text-white focus:outline-none z-50 md:hidden" // Oculto en dispositivos más grandes
+        className="text-white focus:outline-none z-50 md:hidden"
       >
         <div className="space-y-1">
           <span className="block w-6 h-0.5 bg-white"></span>
@@ -23,16 +23,16 @@ const HamburgerMenu = ({ onNavigate }) => {
       {isOpen && (
         <div className="absolute top-8 right-0 bg-black text-white shadow-lg rounded-lg w-40 z-40">
           <ul className="flex flex-col space-y-4 p-4">
-            {["home", "about", "resume", "portfolio", "contact"].map((page) => (
-              <li key={page}>
+            {pages.map((page) => (
+              <li key={page.id}>
                 <button
                   onClick={() => {
-                    onNavigate(page);
-                    setIsOpen(false); // Cierra el menú después de la navegación
+                    onNavigate(page.id); 
+                    setIsOpen(false);
                   }}
                   className="block text-left w-full hover:text-gray-300 transition-colors"
                 >
-                  {page.charAt(0).toUpperCase() + page.slice(1)}
+                  {page.label}
                 </button>
               </li>
             ))}

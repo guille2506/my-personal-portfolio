@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next"; 
 import { handlePageNavigation } from "../scripts/main";
 import Home from "../components/Home";
 import About from "../components/About";
@@ -14,6 +15,17 @@ export default function MainPage() {
   const [activePage, setActivePage] = useState("home");
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationDirection, setAnimationDirection] = useState("up");
+
+  const { t } = useTranslation(); 
+
+  // Páginas con traducción
+  const pages = [
+    { id: "home", label: t("home.home") },
+    { id: "about", label: t("home.about") },
+    { id: "resume", label: t("home.resume") },
+    { id: "portfolio", label: t("home.portfolio") },
+    { id: "contact", label: t("home.contact") },
+  ];
 
   return (
     <div id="main" className="relative h-screen w-full">
@@ -37,36 +49,42 @@ export default function MainPage() {
 
       {/* Menú Hamburguesa */}
       <div className="fixed top-4 right-4 z-50 md:hidden">
-        <HamburgerMenu
-          onNavigate={(page) =>
-            handlePageNavigation(
-              setActivePage,
-              setIsAnimating,
-              setAnimationDirection,
-              page,
-              page === "home" ? "down" : "up"
-            )
-          }
-        />
-      </div>
+  <HamburgerMenu
+    pages={pages} 
+    onNavigate={(page) =>
+      handlePageNavigation(
+        setActivePage,
+        setIsAnimating,
+        setAnimationDirection,
+        page,
+        page === "home" ? "down" : "up"
+      )
+    }
+  />
+</div>
+
 
       {/* Botones de navegación para pantallas grandes */}
       <div className="fixed top-10 right-12 hidden md:flex flex-row space-x-8 z-20">
-        {["home", "about", "resume", "portfolio", "contact"].map((page) => (
+        {pages.map((page) => (
           <button
-            key={page}
+            key={page.id}
             onClick={() =>
               handlePageNavigation(
                 setActivePage,
                 setIsAnimating,
                 setAnimationDirection,
-                page,
-                page === "home" ? "down" : "up"
+                page.id,
+                page.id === "home" ? "down" : "up"
               )
             }
-            className="text-white hover:text-gray-300 transition-colors duration-200"
+            className={`text-white ${
+              activePage === page.id
+                ? "text-green-400 underline"
+                : "hover:text-gray-300"
+            } transition duration-200`}
           >
-            {page.charAt(0).toUpperCase() + page.slice(1)}
+            {page.label}
           </button>
         ))}
       </div>
@@ -84,18 +102,3 @@ export default function MainPage() {
     </div>
   );
 }
-
-
-
-   {/* Botones de navegación */}
-      {/* <div className="fixed top-4 right-4 flex flex-row space-x-6 z-20">
-        {["home", "about", "resume", "portfolio", "contact"].map((page) => (
-          <button
-            key={page}
-            onClick={() => handlePageNavigation(setActivePage, setIsAnimating, page)}
-            className="text-white hover:text-gray-300 transition-colors duration-200"
-          >
-            {page.charAt(0).toUpperCase() + page.slice(1)}
-          </button>
-        ))}
-      </div> */}

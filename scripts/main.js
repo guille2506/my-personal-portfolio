@@ -1,6 +1,5 @@
 
 //efecto cortina
-// Efecto cortina con direcciones
 export const handlePageNavigation = (setActivePage, setIsAnimating, setAnimationDirection, page, direction) => {
   if (
     typeof setIsAnimating !== "function" ||
@@ -11,17 +10,22 @@ export const handlePageNavigation = (setActivePage, setIsAnimating, setAnimation
     return;
   }
 
-  setAnimationDirection(direction); // Dirección: 'up' (de abajo a arriba) o 'down' (de arriba a abajo)
+  setAnimationDirection(direction); 
   setIsAnimating(true);
 
   setTimeout(() => {
-    setActivePage(page); // Cambiar el contenido cuando la cortina está completamente activa
-  }, 500); // Cambiar contenido a mitad de la animación (0.5s)
+    setActivePage(page); 
+  }, 500); 
 
   setTimeout(() => {
-    setIsAnimating(false); // Finalizar la animación
-  }, 1000); // Completar la animación (1s)
+    setIsAnimating(false); 
+  }, 1000); 
 };
+
+
+//letras
+
+
 
 
 

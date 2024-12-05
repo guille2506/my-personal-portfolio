@@ -1,5 +1,43 @@
 {
-    "title": "Bienvenido a Mi Portafolio",
-    "subtitle": "Explora mi trabajo y experiencia."
+  "home": {
+    "title": "Guillermo Illanes",
+    "rotatingWords": ["Freelancer", "Diseñador", "Desarrollador"],
+    "home": "Inicio",
+    "about": "Acerca de Mí",
+    "resume": "Resumen",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "subtitle": "Conóceme",
+    "whoAmI": "¿Quién soy?",
+    "description": {
+      "intro": "Soy Guillermo Illanes, un Desarrollador Full-Stack.",
+      "details": "Soy un desarrollador de software de Argentina apasionado por crear soluciones digitales eficientes, fáciles de usar y visualmente atractivas. Tengo experiencia construyendo sitios web estáticos y dinámicos adaptados a diversos proyectos, combinando funcionalidad con diseño. Actualmente estoy cursando una carrera en Desarrollo de Software, ampliando constantemente mis conocimientos en lenguajes de programación, frameworks y prácticas de desarrollo modernas para mantenerme al día en este campo en constante evolución."
+    },
+    "info": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "age": "Edad",
+      "from": "Origen"
+    },
+    "services": {
+      "title": "Mis Servicios",
+      "list": [
+        {
+          "title": "Tendencias de Diseño",
+          "description": "Manteniéndome al día con las últimas tendencias de diseño para experiencias web modernas."
+        },
+        {
+          "title": "Desarrollo Web",
+          "description": "Creando sitios web responsivos utilizando tecnologías de punta."
+        },
+        {
+          "title": "Atención al Cliente",
+          "description": "Garantizando una comunicación fluida con los clientes para el éxito del proyecto."
+        }
+      ]
+    }
   }
-  
+}

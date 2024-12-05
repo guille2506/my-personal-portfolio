@@ -1,5 +1,43 @@
 {
-    "title": "Welcome to My Portfolio",
-    "subtitle": "Explore my work and experience."
+  "home": {
+    "title": "Guillermo Illanes",
+    "rotatingWords": ["Freelancer", "Designer", "Developer"],
+    "home": "Home",
+    "about": "About Me",
+    "resume": "Resume",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me",
+    "whoAmI": "Who am I?",
+    "description": {
+      "intro": "I’m Guillermo Illanes, a Full-Stack Software Developer.",
+      "details": "I’m a Software Developer based in Argentina with a passion for creating efficient, user-friendly, and visually appealing digital solutions. I have experience building both static and dynamic websites tailored to a variety of projects, blending functionality with design. Currently, I am pursuing a degree in Software Development, continuously expanding my knowledge in programming languages, frameworks, and modern development practices to stay ahead in this ever-evolving field."
+    },
+    "info": {
+      "name": "Name",
+      "email": "Email",
+      "age": "Age",
+      "from": "From"
+    },
+    "services": {
+      "title": "My Services",
+      "list": [
+        {
+          "title": "Design Trends",
+          "description": "Keeping up with the latest design trends for modern web experiences."
+        },
+        {
+          "title": "Web Development",
+          "description": "Crafting responsive websites using cutting-edge technologies."
+        },
+        {
+          "title": "Customer Support",
+          "description": "Ensuring seamless communication with clients for project success."
+        }
+      ]
+    }
   }
-  
+}
