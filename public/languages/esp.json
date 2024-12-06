@@ -39,5 +39,116 @@
         }
       ]
     }
+  },
+
+  "resume": {
+    "title": "Currículum",
+    "subtitle": "Consulta mi Currículum",
+    "education": "Educación",
+    "experience": "Experiencia",
+    "skills": "Mis Habilidades",
+    "educationList": [
+      {
+        "title": "Técnico en Desarrollo de Software",
+        "details": "Instituto Cervantes  / 2022 - 2025",
+        "description": "Instituto Superior Cervantes | Institución Educativa."
+      },
+      {
+        "title": "Desarrollador Full Stack",
+        "details": "ITBA / 2023 - 2024",
+        "description": "Instituto Tecnológico de Buenos Aires."
+      }
+    ],
+    "experienceList": [
+      {
+        "title": "Freelance",
+        "details": "php / 20 - 2023",
+        "description": "Insco. Desarrollé un sistema educativo para un cliente, que incluyó la gestión de bases de datos de alumnos y la creación de aulas virtuales,."
+      },
+      {
+        "title": "Desarrollador Back-End",
+        "details": "Cámara de Comercio de San Juan / 2024 - 2024",
+        "description": "Desarrollé la base de datos con MySQL para la gestión de datos de clientes y administradores."
+      },
+      {
+        "title": "Front-End Developer",
+        "details": "Chamber of Commerce of San Juan / 2024 - 2024",
+        "description": "Diseñé y estructuré el diseño del front-end después de que fuera aprobado por el usuario."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Porta",
+    "subtitle": "Showcasing some of my best work",
+    "viewGithub": "View on GitHub",
+    "projects": [
+      {
+        "id": 1,
+        "title": "Insco",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "camara de comercio",
+        "description": "Mockup for 3D Bags"
+      },
+      {
+        "id": 3,
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": 5,
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": 6,
+        "title": "",
+        "description": ""
+      }
+    ]
+  }, 
+
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "No dudes en contactarme en cualquier momento",
+    "form": {
+      "title": "Envíame un mensaje",
+      "name": "Nombre",
+      "email": "Correo",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "sendButton": "Enviar Mensaje",
+      "statusSending": "Enviando...",
+      "statusSuccess": "Correo enviado correctamente.",
+      "statusError": "Hubo un problema al enviar el correo."
+    },
+    "info": {
+      "heading": "Información de Contacto",
+      "description": "Siempre disponible para trabajos freelance si el proyecto adecuado llega. ¡No dudes en contactarme!",
+      "name": {
+        "label": "Nombre",
+        "value": "Emma Smith"
+      },
+      "location": {
+        "label": "Ubicación",
+        "value": "4155 Mann Island, Liverpool, Reino Unido."
+      },
+      "phone": {
+        "label": "Llámame",
+        "value": "+44 1632 967704"
+      },
+      "email": {
+        "label": "Envíame un correo",
+        "value": "emma@example.com"
+      }
+    }
   }
+
 }

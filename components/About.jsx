@@ -14,13 +14,13 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative bg-[#111110] text-white min-h-screen py-6 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden"
+      className="relative bg-[#101010] text-white min-h-screen py-6 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden"
     >
       {/* Contenedor principal */}
       <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
         {/* Título */}
         <div className="text-center space-y-4">
-          <p className="text-sm text-gray-400">{t("about.subtitle")}</p>
+          <p className="text-gray-400">{t("about.subtitle")}</p>
           <h1 className="text-4xl sm:text-5xl font-bold">{t("about.title")}</h1>
           <div className="mt-2 h-1 w-16 bg-[#009E66] mx-auto"></div>
         </div>

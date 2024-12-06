@@ -20,7 +20,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111110;
+  background-color: #181818;
   transform: translateY(100%);
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -87,4 +87,15 @@ video {
 .animate-blink {
   display: inline-block;
   animation: blink 1s step-end infinite;
+}
+
+/* 
+ <LanguageSwitch activePage="home" /> */
+
+ input:-webkit-autofill {
+  background-color: #161616 !important; /* El color de fondo que deseas */
+  color: #777 !important; /* El color del texto */
+  border: none !important; /* Ajustar otros estilos si es necesario */
+  -webkit-box-shadow: 0 0 0px 1000px #161616 inset !important; /* Para forzar el color de fondo */
+  -webkit-text-fill-color: white !important; /* Asegura el color del texto */
 }

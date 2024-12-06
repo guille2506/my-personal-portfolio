@@ -39,5 +39,119 @@
         }
       ]
     }
-  }
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Check out my Resume",
+    "education": "Education",
+    "experience": "Experience",
+    "skills": "My Skills",
+    "educationList": [
+      {
+        "title": "Software Development Technician",
+        "details": "Instituto Cervantes  / 2022 - 2025",
+        "description": "Cervantes Higher Institute | Educational Institution."
+      },
+      {
+        "title": "Full Stack Developer",
+        "details": "ITBA / 2023 - 2024",
+        "description": "Buenos Aires Institute of Technology."
+      }
+    ],
+    "experienceList": [
+      {
+        "title": "Freelance",
+        "details": "php / 20 - 2023",
+        "description": "Insco. I developed an educational system for a client, which included managing student databases and creating virtual classrooms,."
+      },
+      {
+        "title": "Back-End Developer",
+        "details": "Chamber of Commerce of San Juan / 2024 - 2024",
+        "description": "I developed the database with MySQL for managing client and administrator data."
+      },
+      {
+        "title": "Front-End Developer",
+        "details": "Chamber of Commerce of San Juan / 2024 - 2024",
+        "description": "I designed and structured the front-end layout after it was approved by the user."
+      }
+    ]
+  },
+  
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Showcasing some of my best work",
+    "viewGithub": "View on GitHub",
+    "projects": [
+      {
+        "id": 1,
+        "title": "Insco",
+        "description": ""
+      },
+      {
+        "id": 2,
+        "title": "Chamber of Commerce",
+        "description": ""
+      },
+      {
+        "id": 3,
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": 4,
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": 5,
+        "title": "",
+        "description": ""
+      },
+      {
+        "id": 6,
+        "title": "",
+        "description": ""
+      }
+    ]
+  },
+
+  
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Feel free to contact me anytime",
+      "form": {
+        "title": "Message Me",
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "sendButton": "Send Message",
+        "statusSending": "Sending...",
+        "statusSuccess": "Email sent successfully.",
+        "statusError": "There was an issue sending the email."
+      },
+      "info": {
+        "heading": "Contact Info",
+        "description": "Always available for freelance work if the right project comes along. Feel free to contact me!",
+        "name": {
+          "label": "Name",
+          "value": "Emma Smith"
+        },
+        "location": {
+          "label": "Location",
+          "value": "4155 Mann Island, Liverpool, United Kingdom."
+        },
+        "phone": {
+          "label": "Call Me",
+          "value": "+44 1632 967704"
+        },
+        "email": {
+          "label": "Email Me",
+          "value": "emma@example.com"
+        }
+      }
+    }
+  
+  
+
 }
