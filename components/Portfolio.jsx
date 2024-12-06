@@ -17,23 +17,13 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      image: "/img/item-3.jpg",
-      link: "https://github.com/tuusuario/modern-bag-design",
+      image: "/img/word.jpg",
+      link: "http://profeberon.cuyosoft.com/camara/desarrollo/2024/wp/wp3/",
     },
     {
       id: 4,
-      image: "",
-      link: "https://github.com/tuusuario/modern-bag-design",
-    },
-    {
-      id: 5,
-      image: "/img/item-5.jpg",
-      link: "https://github.com/tuusuario/tshirt-design",
-    },
-    {
-      id: 6,
-      image: "/img/item-6.jpg",
-      link: "https://github.com/tuusuario/packaging-box-mockup",
+      image: "/img/barroBank.jpg",
+      link: "https://github.com/Federicoleyria/Proyecto-React-ITBA.git",
     },
   ];
 

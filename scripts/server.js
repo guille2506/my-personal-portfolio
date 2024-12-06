@@ -4,11 +4,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
 const PORT = 5000; 
-app.use(cors({
-    origin: 'https://guillermoillanes.com', 
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type'],
-}));
+app.use(cors({ origin: 'http://localhost:3000' })); 
 app.use(bodyParser.json()); 
 app.get('/', (req, res) => {
     res.send('Servidor funcionando correctamente. Usa /send-email para enviar correos.');
@@ -40,4 +36,6 @@ app.post('/send-email', async (req, res) => {
         res.status(500).json({ error: 'Hubo un problema al enviar el correo.' });
     }
 });
-
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
