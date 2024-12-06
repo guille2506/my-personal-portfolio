@@ -1,20 +1,30 @@
 const express = require('express');
-const cors = require('cors'); 
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
-
 const app = express();
-const PORT = 5000; 
+const PORT = 5000;
 
+// Configuración de CORS
+app.use(cors({ origin: ['http://localhost:3000', 'https://guillermoillanes.com'] }));
 
-app.use(cors({ origin: 'http://localhost:3000' })); 
-app.use(bodyParser.json()); 
+// Middleware para encabezados CORS adicionales
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Cambia '*' por tu dominio en producción
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
 
+app.use(bodyParser.json());
+
+// Ruta raíz
 app.get('/', (req, res) => {
     res.send('Servidor funcionando correctamente. Usa /send-email para enviar correos.');
 });
 
+// Ruta para enviar correos
 app.post('/send-email', async (req, res) => {
     const { name, email, message } = req.body;
 
@@ -27,8 +37,8 @@ app.post('/send-email', async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'inowbut456@gmail.com', 
-            pass: 'logw lryj elzm alkw', 
+            user: 'inowbut456@gmail.com', // Cambia por tu correo
+            pass: 'logw lryj elzm alkw',  // Cambia por tu contraseña de aplicación
         },
     });
 
@@ -48,7 +58,7 @@ app.post('/send-email', async (req, res) => {
     }
 });
 
-
+// Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

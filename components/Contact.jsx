@@ -26,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
     setStatus(t("contact.form.statusSending"));
     try {
-      const response = await axios.post("http://localhost:5000/send-email", formData);
+      const response = await axios.post("https://api.guillermoillanes.com/send-email", formData);
       if (response.status === 200) {
         setStatus(t("contact.form.statusSuccess"));
         setFormData({ name: "", email: "", subject: "", message: "" });

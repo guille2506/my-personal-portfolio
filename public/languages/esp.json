@@ -134,19 +134,19 @@
       "description": "Siempre disponible para trabajos freelance si el proyecto adecuado llega. ¡No dudes en contactarme!",
       "name": {
         "label": "Nombre",
-        "value": "Emma Smith"
+        "value": "Guillermo Illanes"
       },
       "location": {
         "label": "Ubicación",
-        "value": "4155 Mann Island, Liverpool, Reino Unido."
+        "value": "Argentina, San Juan."
       },
       "phone": {
         "label": "Llámame",
-        "value": "+44 1632 967704"
+        "value": "+54 9 264 606-0355 "
       },
       "email": {
         "label": "Envíame un correo",
-        "value": "emma@example.com"
+        "value": "guillermoillanes233@gmail.com"
       }
     }
   }

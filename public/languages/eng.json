@@ -135,19 +135,19 @@
         "description": "Always available for freelance work if the right project comes along. Feel free to contact me!",
         "name": {
           "label": "Name",
-          "value": "Emma Smith"
+          "value": "Guillermo Illanes"
         },
         "location": {
           "label": "Location",
-          "value": "4155 Mann Island, Liverpool, United Kingdom."
+          "value": "Argentina, San Juan."
         },
         "phone": {
           "label": "Call Me",
-          "value": "+44 1632 967704"
+          "value": "+54 9 264 606-0355 "
         },
         "email": {
           "label": "Email Me",
-          "value": "emma@example.com"
+          "value": "guillermoillanes233@gmail.com"
         }
       }
     }
