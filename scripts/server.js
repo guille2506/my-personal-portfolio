@@ -7,17 +7,18 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors({
-    origin: ['https://guillermoillanes.com'], 
-    methods: ['GET', 'POST'], 
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    origin: 'https://guillermoillanes.com', 
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true, 
 }));
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://guillermoillanes.com'); 
+    res.header('Access-Control-Allow-Origin', 'https://guillermoillanes.com');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     if (req.method === 'OPTIONS') {
-        return res.sendStatus(200); 
+        return res.sendStatus(204); 
     }
     next();
 });
@@ -25,7 +26,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Servidor funcionando correctamente. Usa /send-email para enviar correos.');
+    res.send('Servidor funcionando correctamente.');
 });
 
 app.post('/send-email', async (req, res) => {
@@ -38,22 +39,22 @@ app.post('/send-email', async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'inowbut456@gmail.com', 
-            pass: 'logw lryj elzm alkw', 
+            user: 'tuemail@gmail.com', 
+            pass: 'tucontraseña', 
         },
     });
 
     try {
-        const info = await transporter.sendMail({
+        await transporter.sendMail({
             from: `"Portfolio Contact" <${email}>`,
-            to: 'guillermoillanes233@gmail.com',
+            to: 'destinatario@gmail.com',
             subject: `Nuevo mensaje de ${name}`,
             text: message,
         });
 
         res.status(200).json({ message: 'Correo enviado correctamente' });
     } catch (error) {
-        console.error("Error al enviar el correo:", error);
+        console.error('Error al enviar el correo:', error);
         res.status(500).json({ error: 'Hubo un problema al enviar el correo.' });
     }
 });

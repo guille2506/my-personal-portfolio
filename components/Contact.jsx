@@ -26,16 +26,16 @@ const Contact = () => {
     e.preventDefault();
     setStatus(t("contact.form.statusSending"));
     try {
-      const response = await axios.post("https://api.guillermoillanes.com/send-email", formData);
-      if (response.status === 200) {
-        setStatus(t("contact.form.statusSuccess"));
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      }
+        const response = await axios.post('https://api.guillermoillanes.com/send-email', formData);
+        if (response.status === 200) {
+            setStatus(t("contact.form.statusSuccess"));
+            setFormData({ name: "", email: "", subject: "", message: "" });
+        }
     } catch (error) {
-      console.error("Error al enviar el correo:", error.response?.data || error.message);
-      setStatus(t("contact.form.statusError"));
+        console.error('Error al enviar el correo:', error.response?.data || error.message);
+        setStatus(t("contact.form.statusError"));
     }
-  };
+};
 
   return (
     <div className="bg-[#101010] text-white min-h-screen py-12 px-6">
