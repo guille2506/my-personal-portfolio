@@ -6,31 +6,22 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = 5000;
 
-app.use(cors({
-    origin: 'https://guillermoillanes.com', 
+// Configuración de CORS
+const corsOptions = {
+    origin: 'https://guillermoillanes.com',
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true, 
-}));
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://guillermoillanes.com');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(204); 
-    }
-    next();
-});
-
+// Middleware
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send('Servidor funcionando correctamente.');
-});
-
+// Rutas
 app.post('/send-email', async (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, email, subject, message } = req.body;
 
     if (!name || !email || !message) {
         return res.status(400).json({ error: 'Por favor, completa todos los campos.' });
@@ -51,7 +42,6 @@ app.post('/send-email', async (req, res) => {
             subject: `Nuevo mensaje de ${name}`,
             text: message,
         });
-
         res.status(200).json({ message: 'Correo enviado correctamente' });
     } catch (error) {
         console.error('Error al enviar el correo:', error);
@@ -59,6 +49,9 @@ app.post('/send-email', async (req, res) => {
     }
 });
 
+// Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+
+
