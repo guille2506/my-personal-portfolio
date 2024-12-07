@@ -117,6 +117,8 @@
       "sendButton": "Enviar Mensaje",
       "statusSending": "Enviando...",
       "statusSuccess": "Correo enviado correctamente.",
+      "thankYouMessage": "Gracias por contactarnos. Te responderemos pronto.",
+      "goBackButton": "Volver al formulario",
       "statusError": "Hubo un problema al enviar el correo."
     },
     "info": {

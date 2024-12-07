@@ -1,37 +1,37 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
+import { useForm, ValidationError } from "@formspree/react";
+
 const Contact = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("");
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus(t("contact.form.statusSending"));
-    try {
-      const response = await axios.post("http://localhost:5000/send-email", formData);
-      if (response.status === 200) {
-        setStatus(t("contact.form.statusSuccess"));
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      }
-    } catch (error) {
-      console.error("Error al enviar el correo:", error.response?.data || error.message);
-      setStatus(t("contact.form.statusError"));
-    }
-  };
+  const [state, handleSubmit] = useForm("xjkvdkre"); // Reemplaza con tu Formspree ID.
+  const [showCurtain, setShowCurtain] = useState(false);
+
+  if (state.succeeded) {
+    // Activar animación de cortina
+    setTimeout(() => setShowCurtain(true), 300);
+
+    return (
+      <div
+        className={`${
+          showCurtain ? "curtain-active" : "curtain"
+        } bg-[#101010] text-white min-h-screen py-12 px-6 flex items-center justify-center`}
+      >
+        <div className="text-center space-y-6">
+          <h2 className="text-[46px] font-bold">{t("contact.form.statusSuccess")}</h2>
+          <p className="text-lg text-gray-400">{t("contact.form.thankYouMessage")}</p>
+          <button
+            onClick={() => window.location.reload()} // Refresca la página para reiniciar el formulario.
+            className="mt-6 bg-[#009E66] hover:bg-green-700 text-white py-2 px-6 rounded-md transition-colors duration-200"
+          >
+            {t("contact.form.goBackButton")}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#101010] text-white min-h-screen py-12 px-6">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -41,19 +41,17 @@ const Contact = () => {
           <h2 className="text-[46px] font-bold">{t("contact.title")}</h2>
           <div className="mt-2 h-1 w-16 bg-[#009E66] mx-auto"></div>
         </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Formulario de contacto */}
           <div>
-          <h4 className="text-2xl font-semibold mb-6">{t("contact.form.title")}</h4>
-          {status && <p className="mb-4 text-center">{status}</p>}
+            <h4 className="text-2xl font-semibold mb-6">{t("contact.form.title")}</h4>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input
                   type="text"
                   name="name"
                   placeholder={t("contact.form.name")}
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 bg-[#161616] text-white border-none border-b border-gray-800 focus:border-[#00D187] focus:outline-none focus:ring-[#00D187]"
                 />
@@ -61,8 +59,6 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder={t("contact.form.email")}
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 bg-[#161616] text-white border-none border-b border-gray-800 focus:border-[#00D187] focus:outline-none focus:ring-[#00D187]"
                 />
@@ -71,8 +67,6 @@ const Contact = () => {
                 type="text"
                 name="subject"
                 placeholder={t("contact.form.subject")}
-                value={formData.subject}
-                onChange={handleChange}
                 required
                 className="w-full px-4 py-2 bg-[#161616] text-white border-none border-b border-gray-800 focus:border-[#00D187] focus:outline-none focus:ring-[#00D187]"
               />
@@ -80,19 +74,26 @@ const Contact = () => {
                 name="message"
                 placeholder={t("contact.form.message")}
                 rows="5"
-                value={formData.message}
-                onChange={handleChange}
                 required
                 className="w-full px-4 py-2 bg-[#161616] text-white border-none border-b border-gray-800 focus:border-[#00D187] focus:outline-none focus:ring-[#00D187]"
               ></textarea>
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
               <button
                 type="submit"
+                disabled={state.submitting}
                 className="w-full bg-[#009E66] hover:bg-green-700 text-white py-2 rounded-md transition-colors duration-200"
               >
-                {t("contact.form.sendButton")}
+                {state.submitting
+                  ? t("contact.form.statusSending")
+                  : t("contact.form.sendButton")}
               </button>
             </form>
           </div>
+
           {/* Información de contacto */}
           <div className="bg-[#111110] text-white p-6 rounded-lg shadow-lg space-y-6">
             <h4 className="text-2xl font-semibold">{t("contact.info.heading")}</h4>
@@ -140,7 +141,6 @@ const Contact = () => {
       </div>
     </div>
   );
-  
-  
 };
+
 export default Contact;

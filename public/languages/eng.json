@@ -118,6 +118,8 @@
         "sendButton": "Send Message",
         "statusSending": "Sending...",
         "statusSuccess": "Email sent successfully.",
+        "thankYouMessage": "Thank you for contacting us. We will get back to you soon.",
+        "goBackButton": "Return to the form",
         "statusError": "There was an issue sending the email."
       },
       "info": {

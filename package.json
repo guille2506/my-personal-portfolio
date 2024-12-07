@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@iconify-icons/mdi": "^1.2.48",
     "@iconify/react": "^5.0.2",
     "axios": "^1.7.9",
