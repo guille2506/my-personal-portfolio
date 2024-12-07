@@ -11,7 +11,7 @@ const SocialLinks = () => (
     {/* Íconos sociales */}
     <div className="social-links fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
       <a
-        href="https://github.com"
+        href="https://github.com/guille2506"
         target="_blank"
         rel="noopener noreferrer"
         className="group"
@@ -24,7 +24,7 @@ const SocialLinks = () => (
         />
       </a>
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/in/guillermo-illanes-172aaa229/"
         target="_blank"
         rel="noopener noreferrer"
         className="group"
@@ -37,7 +37,7 @@ const SocialLinks = () => (
         />
       </a>
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/motoz.a/"
         target="_blank"
         rel="noopener noreferrer"
         className="group"
