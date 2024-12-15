@@ -5,7 +5,8 @@ const Resume = () => {
   const { t } = useTranslation();
 
   const skills = [
-    { name: "HTML/CSS", percentage: 85 },
+    { name: "HTML", percentage: 85 },
+    { name: "CSS", percentage: 85 },
     { name: "JavaScript", percentage: 90 },
     { name: "React JS", percentage: 86 },
     { name: "Next.js", percentage: 95 },
