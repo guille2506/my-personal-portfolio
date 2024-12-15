@@ -93,9 +93,9 @@ video {
  <LanguageSwitch activePage="home" /> */
 
  input:-webkit-autofill {
-  background-color: #161616 !important; /* El color de fondo que deseas */
-  color: #777 !important; /* El color del texto */
-  border: none !important; /* Ajustar otros estilos si es necesario */
-  -webkit-box-shadow: 0 0 0px 1000px #161616 inset !important; /* Para forzar el color de fondo */
-  -webkit-text-fill-color: white !important; /* Asegura el color del texto */
+  background-color: #161616 !important; 
+  color: #777 !important; 
+  border: none !important; 
+  -webkit-box-shadow: 0 0 0px 1000px #161616 inset !important; 
+  -webkit-text-fill-color: white !important; 
 }
