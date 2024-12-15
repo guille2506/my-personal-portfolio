@@ -9,7 +9,6 @@ const Resume = () => {
     { name: "HTML/CSS", percentage: 85 },
     { name: "JavaScript", percentage: 90 },
     { name: "React JS", percentage: 86 },
-    { name: "Express.js", percentage: 85 },
     { name: "Next.js", percentage: 95 },
     { name: "PHP", percentage: 80 },
     { name: "MySql", percentage: 80 },
