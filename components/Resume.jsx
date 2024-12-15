@@ -15,7 +15,7 @@ const Resume = () => {
   ];
 
   return (
-    <section id="resume" className="bg-[#101010] text-white py-12 px-6">
+    <section id="resume" className="bg-[#101010] text-white py-12 px-6 min-h-screen w-full overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Título */}
         <div className="text-center space-y-4 mb-12">
