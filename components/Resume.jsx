@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 const Resume = () => {
   const { t } = useTranslation();
 
-  // Habilidades definidas directamente en el código
   const skills = [
     { name: "HTML/CSS", percentage: 85 },
     { name: "JavaScript", percentage: 90 },

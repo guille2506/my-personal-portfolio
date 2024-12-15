@@ -5,7 +5,7 @@ import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [state, handleSubmit] = useForm("xjkvdkre"); // Reemplaza con tu Formspree ID.
+  const [state, handleSubmit] = useForm("xjkvdkre"); 
   const [showCurtain, setShowCurtain] = useState(false);
 
   if (state.succeeded) {
@@ -22,7 +22,7 @@ const Contact = () => {
           <h2 className="text-[46px] font-bold">{t("contact.form.statusSuccess")}</h2>
           <p className="text-lg text-gray-400">{t("contact.form.thankYouMessage")}</p>
           <button
-            onClick={() => window.location.reload()} // Refresca la página para reiniciar el formulario.
+            onClick={() => window.location.reload()} 
             className="mt-6 bg-[#009E66] hover:bg-green-700 text-white py-2 px-6 rounded-md transition-colors duration-200"
           >
             {t("contact.form.goBackButton")}
