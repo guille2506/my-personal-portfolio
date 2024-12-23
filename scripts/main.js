@@ -28,7 +28,6 @@ export const handlePageNavigation = (setActivePage, setIsAnimating, setAnimation
 
 
 
-
   //gato
 
   console.log( `  
